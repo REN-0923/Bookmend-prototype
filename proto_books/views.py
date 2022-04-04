@@ -1,5 +1,4 @@
-from re import I
-from typing import KeysView
+
 from django.shortcuts import redirect, render, get_object_or_404
 
 from .forms import BookmarkForm, BookmarkEditForm, TagForm
@@ -32,7 +31,7 @@ def create(request):
             symbol_list = ['-', ',', '.', '|', ';', ':', '_', '*', '(', ')', '/','#']
             nouns_list = [n for n in nouns_with_symbols if n not in symbol_list]
             bookmark.site_keyword = json.dumps(nouns_list, ensure_ascii=False)
-                                                        #TODO:jsonで日本語が/uXXXXX/になるのを防ぐ。必要か吟味。
+                                                        #TODO:jsonで日本語が/uXXXXX/になるのを防ぐ。必要？
             
             bookmark.save()
             return redirect('create')
