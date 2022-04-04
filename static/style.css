@@ -1,0 +1,127 @@
+
+.bookmark_box_red{
+    border: #cc4e4e 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_blue{
+    border: #4e7bcc 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_green{
+    border: #239023 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_yellow{
+    border: #defa0b 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_orange{
+    border: #f2ac21 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_black{
+    border: #000000 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_gray{
+    border: #8f8f8f 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.bookmark_box_purple{
+    border: #a04ecc 3px solid; /*境界線の指定*/
+    display:inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+
+p#link{
+    margin:0;
+    padding:20px;
+    max-width: 80px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.description {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 100px;
+}
+.description:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 95%;
+    border: 15px solid transparent;
+    border-top: 15px solid #000;
+    margin-left: -15px;
+    transform: rotateZ(90deg);
+}
+.bookmark_box:hover .description{
+    display: inline-block;
+    top: 0px;
+    left: 80px;
+    z-index: 4;
+}
+
+.bookmark_box{
+    display: inline-block;
+}
+
+.description a{
+    color: #defa0b;
+}
+
+.keyword_hashtags h5{
+    display: inline;
+}
+
+.related_topic{
+    display: inline-block;
+    vertical-align: top;
+}

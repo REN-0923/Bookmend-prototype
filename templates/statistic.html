@@ -1,0 +1,21 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+  </head>
+
+<h1>あなたのブックマークに最も含まれるキーワードは、</h1>
+
+{% for item in keyword_top3 %}
+<h3>「#{{item.0}}」:{{item.1}}箇所</h3>
+{% endfor %}
+
+
+<h1>これらのトレンド関連ワードは、</h1>
+{% for topic in related_topics %}
+<div class="related_topic">
+{% for item in topic %}
+<p>{{item}}</p>
+{% endfor %}
+</div>
+{% endfor %}

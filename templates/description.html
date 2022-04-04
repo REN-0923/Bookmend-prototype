@@ -1,0 +1,18 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+  </head>
+<h1>{{bookmark.site_title}}</h1>
+<div class="keyword_hashtags">
+    <h3>キーワード</h3>
+    {% for item in bookmark_keyword_list %}
+    <h5>{{item}}</h5>
+    {% endfor %}
+</div>
+<form action="" method="POST">
+    {{bookmark_form.as_p}}
+    {{tag_form}}
+    {% csrf_token %}
+    <button type="submit">OK!</button>
+</form>

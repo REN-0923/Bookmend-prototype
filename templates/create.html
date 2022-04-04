@@ -1,0 +1,99 @@
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <script type="text/javascript" src="{% static 'script.js' %}"></script>
+</head>
+
+<h1>Bookmend</h1>
+<a href="{% url "statistic" %}">統計</a>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+      <table>
+        {{bookmarkform.as_table}}
+        <tr><td colspan='2'><input type="submit" value="OK!"></td></tr>
+      </table>
+    </form>
+
+    {% for item in bookmark_list %}
+      {% if item.site_color == 1 %}
+        <div class="bookmark_box">
+          <div class="bookmark_box_red" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a id="description_link" href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% elif item.site_color == 2 %}      
+        <div class="bookmark_box">
+          <div class="bookmark_box_blue" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% elif item.site_color == 3 %}
+        <div class="bookmark_box">
+          <div class="bookmark_box_green" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% elif item.site_color == 4 %}     
+        <div class="bookmark_box"><div class="bookmark_box_yellow" id="bookmark">
+        <p id="link">
+          <a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% elif item.site_color == 5 %}    
+        <div class="bookmark_box">
+           <div class="bookmark_box_orange" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% elif item.site_color == 6 %}     
+        <div class="bookmark_box">
+          <div class="bookmark_box_black" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% elif item.site_color == 7 %}     
+        <div class="bookmark_box"> 
+          <div class="bookmark_box_gray" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% else %}
+        <div class="bookmark_box">
+          <div class="bookmark_box_purple" id="bookmark">
+        <p id="link"><a href="{{item.site_url}}">{{item.site_title}}</a></p>
+       <div class="description">
+        <p id="description">{{item.site_title}}</p>
+        <p id="description"><a href="{% url "description" pk=item.id %}">詳細</a></p>
+        </div>
+      </div>
+      </div>
+      {% endif %}
+    {% endfor %}
